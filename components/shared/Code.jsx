@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import { HiMiniCheck, HiMiniClipboard } from "react-icons/hi2";
+import { HiMiniCheck, HiOutlineClipboard } from "react-icons/hi2";
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/components/prism-jsx";
@@ -65,16 +65,19 @@ const ComponentPreview = ({
   };
 
   const CopyButton = ({ code }) => (
-    <div className="absolute right-4 top-4">
+    <div className="absolute right-4 top-4 backdrop-blur-sm">
       <button
         onClick={() => handleCopy(code)}
-        className="p-2 rounded-md hover:bg-gray-100 transition-colors"
+        className="py-2 px-3 text-xs font-semibold rounded-full text-zinc-400 hover:text-zinc-200 hover:bg-zinc-600 transition-colors"
         aria-label={copied ? "Copied!" : "Copy code"}
       >
         {copied ? (
-          <HiMiniClipboard className="w-5 h-5 text-green-500" />
+          <span>Copied!</span>
         ) : (
-          <HiMiniCheck className="w-5 h-5 text-gray-500" />
+          <span className="flex items-center gap-1">
+            <HiOutlineClipboard size={14} />
+            Copy
+          </span>
         )}
       </button>
     </div>
@@ -122,7 +125,7 @@ const ComponentPreview = ({
           <TabPanel>
             <div className="relative">
               <CopyButton code={htmlCode} />
-              <pre className="overflow-x-auto">
+              <pre className="overflow-x-auto text-sm">
                 <CodeBlock code={htmlCode} language="markup" />
               </pre>
             </div>
