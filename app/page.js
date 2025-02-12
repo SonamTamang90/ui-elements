@@ -74,7 +74,7 @@ const Hero = () => {
           Collections of beautiful UI elements for the web.
         </h1>
         <p className="text-zinc-400 max-w-sm mx-auto">
-          Free open source UI elements for your next projects build using{" "}
+          Free open source UI elements build using React and{" "}
           <span className="font-semibold text-zinc-200">Tailwind CSS</span>
         </p>
       </div>
