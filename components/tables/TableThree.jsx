@@ -209,7 +209,7 @@ const Example = () => {
 const TableThree = () => {
   return (
     <ComponentPreview
-      title="Table One"
+      title="Table Three"
       reactCode={reactCode}
       htmlCode={htmlCode}
     >

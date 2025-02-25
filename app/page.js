@@ -1,6 +1,7 @@
 "use client";
 
 import Container from "@/components/shared/Container";
+import Footer from "@/components/shared/Footer";
 import Link from "next/link";
 
 const elements = [
@@ -10,64 +11,66 @@ const elements = [
     href: "/cards",
     status: "New",
     totalEl: "4",
+    status: "Completed",
   },
   {
     id: 2,
     name: "Tables",
     href: "/tables",
-    status: "Coming Soon",
     totalEl: "2",
+    status: "Completed",
   },
   {
     id: 3,
-    name: "Forms",
-    href: "/forms",
+    name: "Bento Grid",
+    href: "/bento-grids",
+    totalEl: "2",
     status: "Coming Soon",
-    totalEl: "4",
   },
   {
     id: 4,
-    name: "Dropdowns",
-    href: "/dropdowns",
-    status: "Coming Soon",
-    totalEl: "4",
-  },
-  {
-    id: 5,
     name: "Navbar",
     href: "/navbar",
     status: "Coming Soon",
     totalEl: "6",
+    status: "Coming Soon",
   },
   {
-    id: 6,
+    id: 5,
     name: "Footer",
     href: "/footer",
     status: "Coming Soon",
     totalEl: "2",
   },
   {
-    id: 7,
-    name: "Bento Grid",
-    href: "/bento-grid",
+    id: 6,
+    name: "Forms",
+    href: "/forms",
     status: "Coming Soon",
-    totalEl: "2",
+    totalEl: "4",
   },
-
+  {
+    id: 7,
+    name: "Dropdowns",
+    href: "/dropdowns",
+    status: "Coming Soon",
+    totalEl: "4",
+  },
   {
     id: 8,
-    name: "Testimonials",
-    href: "/testimonials",
-    status: "Coming Soon",
-    totalEl: "3",
-  },
-  {
-    id: 9,
     name: "Pricing",
     href: "/pricing",
     status: "Coming Soon",
     totalEl: "3",
   },
+  {
+    id: 9,
+    name: "Testimonials",
+    href: "/testimonials",
+    status: "Coming Soon",
+    totalEl: "3",
+  },
+
   {
     id: 10,
     name: "Hero",
@@ -112,16 +115,32 @@ const Hero = () => {
 
 const ComponentCard = ({ component }) => {
   const { name, href, status, totalEl } = component;
-  return (
+  const isDisabled = status === "Coming Soon";
+  const isNew = status === "New";
+
+  return isDisabled ? (
+    // Disabled version (no link)
+    <div className="group relative cursor-not-allowed opacity-70">
+      <div className="relative bg-dark-700 border border-dark-300 p-6 rounded-2xl">
+        <h3 className="font-bebas text-zinc-200 text-xl tracking-wider mb-2">
+          {name}
+        </h3>
+        <p className="text-sm text-zinc-200">{totalEl} UI elements</p>
+        <span className="inline-block absolute -top-2 right-0 bg-gray-500/70 text-xs font-semibold py-0.5 px-3 rounded-full">
+          Coming Soon
+        </span>
+      </div>
+    </div>
+  ) : (
     <Link href={href} className="group relative">
       <div className="relative bg-dark-700 border border-dark-300 p-6 rounded-2xl transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-md group-hover:shadow-zinc-100/5">
         <h3 className="font-bebas text-zinc-200 text-xl tracking-wider mb-2">
           {name}
         </h3>
         <p className="text-sm text-zinc-200">{totalEl} UI elements</p>
-        {status === "New" && (
+        {isNew && (
           <span className="inline-block absolute -top-2 right-0 bg-yellow-300/70 text-xs font-semibold py-0.5 px-3 rounded-full">
-            {status}
+            New
           </span>
         )}
       </div>
@@ -147,6 +166,7 @@ const page = () => {
       <Container>
         <Hero />
         <Listing />
+        <Footer />
       </Container>
     </>
   );
