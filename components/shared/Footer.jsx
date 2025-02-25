@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="flex items-center justify-center text-white py-20 border-t border-zinc-800">
+    <div className="flex items-center justify-center text-white py-20">
       <div className="max-w-sm mx-auto text-center flex flex-col gap-4">
         <p className="text-zinc-300 text-base font-medium">
           New UI elements added weekly. Check back to see what's new!
