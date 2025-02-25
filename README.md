@@ -6,14 +6,6 @@ Beautiful collections of UI Elements built with React and Tailwind CSS. Just cop
 
 Browse, preview, and use beautiful UI Elements in your React projects. No installation needed - simply copy and paste the code!
 
-## 🚀 How It Works
-
-1.Browse our collection of UI components
-2.Preview the components in action
-3.Copy the code
-4.Paste directly into your React project
-5.Customize the styles using Tailwind CSS classes
-
 ## ⚡ Prerequisites
 
 Your project should already have:

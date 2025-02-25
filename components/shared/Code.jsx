@@ -2,11 +2,12 @@
 
 import React, { useEffect, useState } from "react";
 import { Tab, TabGroup, TabList, TabPanel, TabPanels } from "@headlessui/react";
-import { HiMiniCheck, HiOutlineClipboard } from "react-icons/hi2";
+import { HiOutlineClipboard } from "react-icons/hi2";
 import Prism from "prismjs";
 import "prismjs/themes/prism-tomorrow.css";
 import "prismjs/components/prism-jsx";
 import "prismjs/components/prism-markup";
+import dedent from "dedent";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -40,9 +41,11 @@ const CodeBlock = ({ code, language }) => {
 
   const formattedCode = formatCode(code);
 
+  const dedentedCode = dedent(code);
+
   return (
     <pre className="rounded-lg overflow-x-auto">
-      <code className={`language-${language}`}>{formattedCode}</code>
+      <code className={`language-${language}`}>{dedentedCode}</code>
     </pre>
   );
 };
@@ -117,8 +120,8 @@ const ComponentPreview = ({
           <TabPanel>
             <div className="relative">
               <CopyButton code={reactCode} />
-              <pre className="overflow-x-auto">
-                <code className="text-gray-100 text-sm">{reactCode}</code>
+              <pre className="overflow-x-auto text-sm">
+                <CodeBlock code={reactCode} language="jsx" />
               </pre>
             </div>
           </TabPanel>
@@ -139,37 +142,3 @@ const ComponentPreview = ({
 };
 
 export default ComponentPreview;
-
-// // Example Button Component
-// const ExampleButton = () => (
-//   <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
-//     Click me
-//   </button>
-// );
-
-// const reactCode = `const Button = () => (
-//   <button className="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
-//     Click me
-//   </button>
-// );`;
-
-// const htmlCode = `<button class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 transition-colors">
-//   Click me
-// </button>`;
-
-// const Cards = () => {
-//   return (
-//     <div className="p-8">
-//       <ComponentPreview
-//         title="Button Component"
-//         description="A simple button component with hover effects"
-//         reactCode={reactCode}
-//         htmlCode={htmlCode}
-//       >
-//         <ExampleButton />
-//       </ComponentPreview>
-//     </div>
-//   );
-// };
-
-// export default Cards;

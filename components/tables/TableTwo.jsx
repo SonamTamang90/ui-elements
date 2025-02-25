@@ -39,10 +39,10 @@ const htmlCode = `<div className="bg-zinc-100 overflow-hidden rounded-2xl border
               <th className="px-3 py-3.5">Role</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-zinc-300">
-              <tr>
+          <tbody>
+              <tr className="even:bg-zinc-200/40">
                 <td className="py-4 pr-3 pl-4 text-zinc-900 font-semibold whitespace-nowrap">
-                 Williams Garcia
+                  William Garcia
                 </td>
                 <td className="px-3 py-4 text-zinc-600 whitespace-nowrap">
                   CTO
@@ -71,7 +71,6 @@ const people = [
   },
   // Add more team...
 ];
-
 <div className="bg-zinc-100 overflow-hidden rounded-2xl border border-zinc-300 shadow-md">
       <div className="min-w-full overflow-x-auto">
         <table className="w-full text-sm text-left divide-y divide-zinc-300">
@@ -83,9 +82,9 @@ const people = [
               <th className="px-3 py-3.5">Role</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-zinc-300">
+          <tbody>
             {people.map((person) => (
-              <tr>
+              <tr className="even:bg-zinc-200/40">
                 <td className="py-4 pr-3 pl-4 text-zinc-900 font-semibold whitespace-nowrap">
                   {person.name}
                 </td>
@@ -119,9 +118,9 @@ const Example = () => {
               <th className="px-3 py-3.5">Role</th>
             </tr>
           </thead>
-          <tbody className="divide-y divide-zinc-300">
+          <tbody>
             {people.map((person) => (
-              <tr>
+              <tr className="even:bg-zinc-200/40">
                 <td className="py-4 pr-3 pl-4 text-zinc-900 font-semibold whitespace-nowrap">
                   {person.name}
                 </td>
@@ -143,10 +142,10 @@ const Example = () => {
   );
 };
 
-const TableOne = () => {
+const TableTwo = () => {
   return (
     <ComponentPreview
-      title="Table One"
+      title="Table Two"
       reactCode={reactCode}
       htmlCode={htmlCode}
     >
@@ -155,4 +154,4 @@ const TableOne = () => {
   );
 };
 
-export default TableOne;
+export default TableTwo;

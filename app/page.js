@@ -16,14 +16,14 @@ const elements = [
     name: "Tables",
     href: "/tables",
     status: "Coming Soon",
-    totalEl: "3",
+    totalEl: "2",
   },
   {
     id: 3,
     name: "Forms",
     href: "/forms",
     status: "Coming Soon",
-    totalEl: "6",
+    totalEl: "4",
   },
   {
     id: 4,
@@ -59,7 +59,35 @@ const elements = [
     name: "Testimonials",
     href: "/testimonials",
     status: "Coming Soon",
-    totalEl: "8",
+    totalEl: "3",
+  },
+  {
+    id: 9,
+    name: "Pricing",
+    href: "/pricing",
+    status: "Coming Soon",
+    totalEl: "3",
+  },
+  {
+    id: 10,
+    name: "Hero",
+    href: "/hero",
+    status: "Coming Soon",
+    totalEl: "3",
+  },
+  {
+    id: 11,
+    name: "Calendars",
+    href: "/hero",
+    status: "Coming Soon",
+    totalEl: "3",
+  },
+  {
+    id: 12,
+    name: "Timeline",
+    href: "/hero",
+    status: "Coming Soon",
+    totalEl: "4",
   },
 ];
 
