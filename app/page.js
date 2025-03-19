@@ -119,7 +119,6 @@ const ComponentCard = ({ component }) => {
   const isNew = status === "New";
 
   return isDisabled ? (
-    // Disabled version (no link)
     <div className="group relative cursor-not-allowed opacity-70">
       <div className="relative bg-dark-700 border border-dark-300 p-6 rounded-2xl">
         <h3 className="font-bebas text-zinc-200 text-xl tracking-wider mb-2">
